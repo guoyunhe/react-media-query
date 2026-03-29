@@ -1,19 +1,19 @@
-# react-media-query
+# @guoyunhe/react-media-query
 
-![Version](https://img.shields.io/npm/v/react-media-query)
-![Downloads](https://img.shields.io/npm/dw/react-media-query)
-![Bundle size](https://img.shields.io/bundlephobia/minzip/react-media-query)
+![Version](https://img.shields.io/npm/v/@guoyunhe/react-media-query)
+![Downloads](https://img.shields.io/npm/dw/@guoyunhe/react-media-query)
+![Bundle size](https://img.shields.io/bundlephobia/minzip/@guoyunhe/react-media-query)
 
-Your description...
+React hooks to get state from media query and listen to media query changes.
 
 ## Install
 
 ```bash
-npm i -S react-media-query
+npm i -S @guoyunhe/react-media-query
 ```
 
 ## Example
 
 ```js
-import { ReactMediaQuery } from 'react-media-query';
+import { ReactMediaQuery } from '@guoyunhe/react-media-query';
 ```

@@ -1,4 +1,6 @@
 {
+  "name": "@guoyunhe/react-media-query",
+  "description": "React hooks to get state from media query and listen to media query changes",
   "homepage": "https://github.com/guoyunhe/react-media-query#readme",
   "bugs": {
     "url": "https://github.com/guoyunhe/react-media-query/issues"
