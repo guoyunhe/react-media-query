@@ -15,5 +15,8 @@ npm i -S @guoyunhe/react-media-query
 ## Example
 
 ```js
-import { ReactMediaQuery } from '@guoyunhe/react-media-query';
+import { useMediaQuery } from '@guoyunhe/react-media-query';
+
+const isMobile = useMediaQuery('(max-width: 767px)');
+const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 ```
