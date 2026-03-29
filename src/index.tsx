@@ -1,17 +1,36 @@
-import cn from 'classnames';
-import { CSSProperties, ReactNode } from 'react';
-import './index.css';
+import { useEffect, useState } from 'react';
 
-export interface ReactMediaQueryProps {
-  children?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
+function getMediaQueryMatches(query: string) {
+  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+    return false;
+  }
+
+  return window.matchMedia(query).matches;
 }
 
-export function ReactMediaQuery({ children, className, style }: ReactMediaQueryProps) {
-  return (
-    <div className={cn('react-media-query', className)} style={style}>
-      {children}
-    </div>
-  );
+export function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState(() => getMediaQueryMatches(query));
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return;
+    }
+
+    const mediaQueryList = window.matchMedia(query);
+    const handleChange = (event: MediaQueryListEvent) => {
+      setMatches(event.matches);
+    };
+
+    setMatches(mediaQueryList.matches);
+
+    if (typeof mediaQueryList.addEventListener === 'function') {
+      mediaQueryList.addEventListener('change', handleChange);
+      return () => mediaQueryList.removeEventListener('change', handleChange);
+    }
+
+    mediaQueryList.addListener(handleChange);
+    return () => mediaQueryList.removeListener(handleChange);
+  }, [query]);
+
+  return matches;
 }
