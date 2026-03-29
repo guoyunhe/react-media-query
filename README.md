@@ -3,6 +3,7 @@
 ![Version](https://img.shields.io/npm/v/@guoyunhe/react-media-query)
 ![Downloads](https://img.shields.io/npm/dw/@guoyunhe/react-media-query)
 ![Bundle size](https://img.shields.io/bundlephobia/minzip/@guoyunhe/react-media-query)
+![License](https://img.shields.io/npm/l/@guoyunhe/react-media-query)
 
 React hooks to get state from media query and listen to media query changes.
 
