@@ -95,7 +95,17 @@
   "rive": {
     "template": "react",
     "doc": {
-      "basename": "/react-media-query/"
+      "basename": "/react-media-query/",
+      "languages": [
+        {
+          "code": "en",
+          "name": "English"
+        },
+        {
+          "code": "zh",
+          "name": "中文"
+        }
+      ]
     }
   }
 }
