@@ -23,13 +23,8 @@ export function useMediaQuery(query: string) {
 
     setMatches(mediaQueryList.matches);
 
-    if (typeof mediaQueryList.addEventListener === 'function') {
-      mediaQueryList.addEventListener('change', handleChange);
-      return () => mediaQueryList.removeEventListener('change', handleChange);
-    }
-
-    mediaQueryList.addListener(handleChange);
-    return () => mediaQueryList.removeListener(handleChange);
+    mediaQueryList.addEventListener('change', handleChange);
+    return () => mediaQueryList.removeEventListener('change', handleChange);
   }, [query]);
 
   return matches;

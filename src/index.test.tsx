@@ -25,14 +25,6 @@ class MockMediaQueryList {
     this.listeners.delete(listener);
   }
 
-  addListener(listener: (event: MockMediaQueryListEvent) => void) {
-    this.listeners.add(listener);
-  }
-
-  removeListener(listener: (event: MockMediaQueryListEvent) => void) {
-    this.listeners.delete(listener);
-  }
-
   dispatch(matches: boolean) {
     this.matches = matches;
     const event: MockMediaQueryListEvent = { matches, media: this.media };
